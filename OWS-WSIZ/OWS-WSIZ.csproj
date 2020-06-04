@@ -74,6 +74,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\NaciagPodstawowy.cs" />
+    <Compile Include="Models\ObcKablaWiatremWpPrzelot.cs" />
+    <Compile Include="Models\ObcLatarnia.cs" />
+    <Compile Include="Models\ObliczoneSlupy.cs" />
+    <Compile Include="Models\Slupy.cs" />
+    <Compile Include="Models\StrefaKlimatyczna.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -107,9 +113,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\ShellView.xaml">
       <SubType>Designer</SubType>
