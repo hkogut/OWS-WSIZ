@@ -9,5 +9,12 @@ namespace OWS_WSIZ.ViewModels
 {
     class ShellViewModel : Conductor<object>
     {
+        /// <summary>
+        /// Metody odpowiedzialne za ładowanie odpowiednich UserControl
+        /// </summary>
+        public void LoadPageOne()
+        {
+            ActivateItem(new SlupPrzelotowyViewModel());
+        }
     }
 }
