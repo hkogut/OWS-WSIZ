@@ -77,5 +77,186 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
+        <!--ilosc kabla glównego-->
+        <Label Content="Ilość:" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" />
+        <TextBox x:Name="IloscKabel1" Grid.Column="1" Grid.Row="6"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscKabel2" Grid.Column="1" Grid.Row="7"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscKabel3" Grid.Column="1" Grid.Row="8"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscKabel4" Grid.Column="1" Grid.Row="9"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscKabel5" Grid.Column="1" Grid.Row="10"
+            Width="30" Height="20" />
+
+
+        <!--combo kabel główny-->
+        <Label Content="Typ kabla:" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="5" />
+        <ComboBox Grid.Column="2" Grid.Row="6" Width="60" Height="20" x:Name="ComboObcKablaWiatremWpPrzelot1"
+                  SelectedItem="{Binding SelectedComboObcKablaWiatremWpPrzelot1}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="2" Grid.Row="7" Width="60" Height="20" x:Name="ComboObcKablaWiatremWpPrzelot2"
+                  SelectedItem="{Binding SelectedComboObcKablaWiatremWpPrzelot2}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="2" Grid.Row="8" Width="60" Height="20" x:Name="ComboObcKablaWiatremWpPrzelot3"
+                  SelectedItem="{Binding SelectedComboObcKablaWiatremWpPrzelot3}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="2" Grid.Row="9" Width="60" Height="20" x:Name="ComboObcKablaWiatremWpPrzelot4"
+                  SelectedItem="{Binding SelectedComboObcKablaWiatremWpPrzelot4}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="2" Grid.Row="10" Width="60" Height="20" x:Name="ComboObcKablaWiatremWpPrzelot5"
+                  SelectedItem="{Binding SelectedComboObcKablaWiatremWpPrzelot5}" SelectedIndex="0"
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <!--ilosc kabel przyłączeniowy-->
+        <Label Content="Ilość p.:" Grid.Column="7" HorizontalAlignment="Center" Grid.Row="5" />
+        <TextBox x:Name="IloscPrzylacz1" Grid.Column="7" Grid.Row="6"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscPrzylacz2" Grid.Column="7" Grid.Row="7"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscPrzylacz3" Grid.Column="7" Grid.Row="8"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscPrzylacz4" Grid.Column="7" Grid.Row="9"
+            Width="30" Height="20" />
+        <TextBox x:Name="IloscPrzylacz5" Grid.Column="7" Grid.Row="10"
+            Width="30" Height="20" />
+
+        <!--dlugość kabel przylączeniowy-->
+        <Label Content="Długość:" Grid.Column="8" HorizontalAlignment="Center" Grid.Row="5" />
+        <TextBox Text="{Binding DlugoscPrzylacz1, StringFormat=N2}" Grid.Column="8" Grid.Row="6"
+            Width="30" Height="20" />
+        <TextBox Text="{Binding DlugoscPrzylacz2, StringFormat=N2}" Grid.Column="8" Grid.Row="7"
+            Width="30" Height="20" />
+        <TextBox Text="{Binding DlugoscPrzylacz3, StringFormat=N2}" Grid.Column="8" Grid.Row="8"
+            Width="30" Height="20" />
+        <TextBox Text="{Binding DlugoscPrzylacz4, StringFormat=N2}" Grid.Column="8" Grid.Row="9"
+            Width="30" Height="20" />
+        <TextBox Text="{Binding DlugoscPrzylacz5, StringFormat=N2}" Grid.Column="8" Grid.Row="10"
+            Width="30" Height="20" />
+
+        <!--combo kabel Przyłączeniowy-->
+        <Label Content="Przyłącze:" Grid.Column="9" HorizontalAlignment="Center" Grid.Row="5" />
+        <ComboBox Grid.Column="9" Grid.Row="6" Width="60" Height="20" x:Name="ComboPrzylaczPrzelot1"
+                  SelectedItem="{Binding SelectedComboPrzylaczPrzelot1}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="9" Grid.Row="7" Width="60" Height="20" x:Name="ComboPrzylaczPrzelot2"
+                  SelectedItem="{Binding SelectedComboPrzylaczPrzelot2}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="9" Grid.Row="8" Width="60" Height="20" x:Name="ComboPrzylaczPrzelot3"
+                  SelectedItem="{Binding SelectedComboPrzylaczPrzelot3}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="9" Grid.Row="9" Width="60" Height="20" x:Name="ComboPrzylaczPrzelot4"
+                  SelectedItem="{Binding SelectedComboPrzylaczPrzelot4}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="9" Grid.Row="10" Width="60" Height="20" x:Name="ComboPrzylaczPrzelot5"
+                  SelectedItem="{Binding SelectedComboPrzylaczPrzelot5}" SelectedIndex="0" 
+                  Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypKabla}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <Label Grid.Row="12"></Label>
+        <!--Latarnia-->
+        <Label Content="Latarnia:" Grid.Column="6" Grid.Row="13" HorizontalAlignment="Right" 
+               VerticalAlignment="Bottom" />
+        <ComboBox Grid.Column="6" Grid.Row="14" ItemsSource="{Binding ComboLatarnia}"
+                  SelectedItem="{Binding SelectedComboLatarnia}" MaxHeight="20" MaxWidth="45"
+                  SelectedIndex="0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Latarnia}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!--combo słupy-->
+        <Label Content="Typ słupa:" Grid.Column="3" Grid.Row="13" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <ComboBox Grid.Column="3" Grid.Row="14" x:Name="ComboSlupy" MaxHeight="20" MaxWidth="50"
+                  SelectedItem="{Binding SelectedSlupy}"
+                  SelectedIndex="0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding TypSlupa}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!--dlugosc przesla-->
+        <Label Grid.Column="1" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <TextBlock>Długość <LineBreak/>przęsła</TextBlock>
+        </Label>
+        <TextBox Grid.Column="1" Grid.Row="14" HorizontalAlignment="Center" MaxWidth="50"
+            Width="30" Height="20" Text="{Binding DlugoscPrzesla, StringFormat=N2}"/>
+
+        <!--nr słupa-->
+        <Label Content="Nr. słupa:" Grid.Column="8" Grid.Row="13" VerticalAlignment="Bottom"  />
+        <TextBox x:Name="NrSlupa" Grid.Column="8" Grid.Row="14"
+                  MaxWidth="50" Height="20"/>
+
+        <!--oblicz-->
+        <Button x:Name="ObliczPrzelotowy" Grid.Row="14" Grid.Column="10" >oblicz</Button>
+
+
+
     </Grid>
 </UserControl>
