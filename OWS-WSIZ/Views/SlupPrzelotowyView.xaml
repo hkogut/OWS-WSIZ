@@ -256,7 +256,25 @@
         <!--oblicz-->
         <Button x:Name="ObliczPrzelotowy" Grid.Row="14" Grid.Column="10" >oblicz</Button>
 
+        <!--sekcja z wynikiem-->
+        <Label Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="2">Warunek: Pud>=Pu</Label>
+        <Label Grid.Column="1" Grid.Row="17" Grid.ColumnSpan="2">Pu=Pp+Po+Pr</Label>
+        <Label Grid.Column="1" Grid.Row="18" Grid.ColumnSpan="2">Pp-obc. kabla głównego</Label>
+        <Label Grid.Column="1" Grid.Row="19" Grid.ColumnSpan="2">Po-obc. wiatrem latarni</Label>
+        <Label Grid.Column="1" Grid.Row="20" Grid.ColumnSpan="2">Pr-naciągu przyłączy</Label>
+        <Label Grid.Column="4" Grid.Row="16" HorizontalAlignment="Center" >Pud=</Label>
+        <TextBlock x:Name="Pud" Grid.Column="6" Grid.Row="16" HorizontalAlignment="Left" VerticalAlignment="Center">0</TextBlock>
+        <Label Grid.Column="4" Grid.Row="17" HorizontalAlignment="Center" >Pu=</Label>
+        <TextBlock x:Name="Pu" Grid.Column="6" Grid.Row="17" HorizontalAlignment="Left" VerticalAlignment="Center">0</TextBlock>
+        <Label Grid.Column="4" Grid.Row="19" Grid.ColumnSpan="5" HorizontalAlignment="Center">Wynik obliczeń</Label>
+        <TextBlock x:Name="Wynik" FontSize="15" Grid.Column="4" Grid.Row="20" Grid.ColumnSpan="5" HorizontalAlignment="Center"></TextBlock>
 
+        <Label Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="10"></Label>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="13" Grid.Column="1" HorizontalAlignment="Left" 
+                Height="55" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Width="495"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="14" Grid.Column="1" HorizontalAlignment="Left" Margin="0,7,0,23.4" Grid.Row="3" Grid.RowSpan="14" Width="495"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="14" HorizontalAlignment="Left" Height="142" Margin="0,9.2,0,0" Grid.Row="15" Grid.RowSpan="7" VerticalAlignment="Top" Width="495" Grid.Column="1"/>
+        <Button x:Name="Zapisz" Grid.Row="19" Grid.Column="10">Zapisz</Button>
 
     </Grid>
 </UserControl>
