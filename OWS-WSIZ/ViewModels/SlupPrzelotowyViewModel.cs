@@ -459,6 +459,12 @@ namespace OWS_WSIZ.ViewModels
             }
         }
 
+        public void Zapisz()
+        {
+            DataAccess da = new DataAccess();
+            da.ZapiszSlupa(NrSlupa, Wynik, Pu, Pud);
+        }
+
         /// <summary>
         /// konstruktor klasy SlupPrzelotowyViewModel
         /// </summary>

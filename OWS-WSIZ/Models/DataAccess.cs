@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,5 +88,32 @@ namespace OWS_WSIZ.Models
         }
 
 
+        /// <summary>
+        /// Metoda zapisuje do tabeli ObliczoneSłupy, zmienne przesłąne do metody jako argumenty
+        /// </summary>
+        /// <param name="NrSlupa"></param>
+        /// <param name="Wynik"></param>
+        /// <param name="Pu"></param>
+        /// <param name="Pud"></param>
+        public void ZapiszSlupa(string NrSlupa, string Wynik, float Pu, float Pud)
+        {
+
+            SqlConnection con = new SqlConnection
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["BazaOWS"].ConnectionString
+            };
+            con.Open();
+            SqlCommand cmd = new SqlCommand
+            {
+                CommandText = "Insert into ObliczoneSlupy(NrSlupa, Wynik, Pu, Pud) values (@NrSlupa, @Wynik, @Pu, @Pud)",
+                Connection = con
+            };
+            cmd.Parameters.AddWithValue("@NrSlupa", NrSlupa);
+            cmd.Parameters.AddWithValue("@Wynik", Wynik);
+            cmd.Parameters.AddWithValue("@Pu", Pu);
+            cmd.Parameters.AddWithValue("@Pud", Pud);
+            cmd.Connection = con;
+            int a = cmd.ExecuteNonQuery();
+        }
     }
 }
