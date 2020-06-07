@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -85,11 +87,23 @@
     <Compile Include="Models\StrefaKlimatyczna.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\SlupPrzelotowyViewModel.cs" />
+    <Compile Include="ViewModels\StrefaSadziowaSViewModel.cs" />
+    <Compile Include="ViewModels\StrefaWiatrowaWViewModel.cs" />
+    <Compile Include="ViewModels\TabelaObliczoneSlupyViewModel.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SlupPrzelotowyView.xaml.cs">
       <DependentUpon>SlupPrzelotowyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StrefaSadziowaSView.xaml.cs">
+      <DependentUpon>StrefaSadziowaSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StrefaWiatrowaWView.xaml.cs">
+      <DependentUpon>StrefaWiatrowaWView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TabelaObliczoneSlupyView.xaml.cs">
+      <DependentUpon>TabelaObliczoneSlupyView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +141,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SlupPrzelotowyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StrefaSadziowaSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StrefaWiatrowaWView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TabelaObliczoneSlupyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

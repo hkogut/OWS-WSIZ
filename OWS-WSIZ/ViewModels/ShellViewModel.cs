@@ -16,5 +16,17 @@ namespace OWS_WSIZ.ViewModels
         {
             ActivateItem(new SlupPrzelotowyViewModel());
         }
+        public void LoadPageTwo()
+        {
+            ActivateItem(new TabelaObliczoneSlupyViewModel());
+        }
+        public void LoadStrefaWiatrowa()
+        {
+            ActivateItem(new StrefaWiatrowaWViewModel());
+        }
+        public void LoadStrefaSadziowa()
+        {
+            ActivateItem(new StrefaSadziowaSViewModel());
+        }
     }
 }
