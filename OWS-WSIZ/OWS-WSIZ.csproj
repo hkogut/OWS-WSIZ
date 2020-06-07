@@ -48,6 +48,7 @@
       <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -74,6 +75,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\DataAccess.cs" />
+    <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\NaciagPodstawowy.cs" />
     <Compile Include="Models\ObcKablaWiatremWpPrzelot.cs" />
     <Compile Include="Models\ObcLatarnia.cs" />
