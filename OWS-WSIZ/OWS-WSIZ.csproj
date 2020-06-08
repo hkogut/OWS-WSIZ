@@ -86,12 +86,16 @@
     <Compile Include="Models\Slupy.cs" />
     <Compile Include="Models\StrefaKlimatyczna.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\SlupNaroznyViewModel.cs" />
     <Compile Include="ViewModels\SlupPrzelotowyViewModel.cs" />
     <Compile Include="ViewModels\StrefaSadziowaSViewModel.cs" />
     <Compile Include="ViewModels\StrefaWiatrowaWViewModel.cs" />
     <Compile Include="ViewModels\TabelaObliczoneSlupyViewModel.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SlupNaroznyView.xaml.cs">
+      <DependentUpon>SlupNaroznyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SlupPrzelotowyView.xaml.cs">
       <DependentUpon>SlupPrzelotowyView.xaml</DependentUpon>
@@ -137,6 +141,10 @@
   <ItemGroup />
   <ItemGroup>
     <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SlupNaroznyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
