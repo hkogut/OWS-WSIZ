@@ -16,6 +16,10 @@ namespace OWS_WSIZ.ViewModels
         {
             ActivateItem(new SlupPrzelotowyViewModel());
         }
+        public void LoadSlupNarozny()
+        {
+            ActivateItem(new SlupNaroznyViewModel());
+        }
         public void LoadPageTwo()
         {
             ActivateItem(new TabelaObliczoneSlupyViewModel());

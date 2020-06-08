@@ -115,5 +115,19 @@ namespace OWS_WSIZ.Models
             cmd.Connection = con;
             int a = cmd.ExecuteNonQuery();
         }
+
+        /// <summary>
+        /// Pobiera dane z tabeli SlupyNarozne
+        /// </summary>
+        /// <returns></returns>
+        public List<Slupy> ZaladujSlupyNarozne()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("BazaOWS")))
+            {
+                var output = connection.Query<Slupy>(
+                    $"select * from SlupyNarozne").ToList();
+                return output;
+            }
+        }
     }
 }

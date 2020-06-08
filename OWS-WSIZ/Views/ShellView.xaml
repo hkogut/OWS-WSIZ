@@ -15,6 +15,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -29,10 +30,11 @@
 
 
         <Button x:Name="LoadPageOne" Grid.Row="1" Grid.Column="2">Słup Przelotowy</Button>
-        <Button x:Name="LoadPageTwo" Grid.Row="1" Grid.Column="3">Obliczone słupy</Button>
-        <Button x:Name="LoadStrefaWiatrowa" Grid.Row="1" Grid.Column="4" >Strefy Wiatrowe</Button>
-        <Button x:Name="LoadStrefaSadziowa" Grid.Row="1" Grid.Column="5" >Strefy Sadziowe</Button>
-        <ContentControl Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="7" 
+        <Button x:Name="LoadSlupNarozny" Grid.Row="1" Grid.Column="3">Słup Narożny</Button>
+        <Button x:Name="LoadPageTwo" Grid.Row="1" Grid.Column="4">Obliczone słupy</Button>
+        <Button x:Name="LoadStrefaWiatrowa" Grid.Row="1" Grid.Column="5" >Strefy Wiatrowe</Button>
+        <Button x:Name="LoadStrefaSadziowa" Grid.Row="1" Grid.Column="6" >Strefy Sadziowe</Button>
+        <ContentControl Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="8" 
                         x:Name="ActiveItem"/>
 
 
