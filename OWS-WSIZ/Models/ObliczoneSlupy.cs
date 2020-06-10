@@ -8,7 +8,6 @@ namespace OWS_WSIZ.Models
 {
     /// <summary>
     /// Klasa ObliczoneSlupy to model tabeli ObliczoneSlupy z bazy danych
-    /// posiada propercje
     /// </summary>
     public class ObliczoneSlupy
     {
@@ -22,6 +21,8 @@ namespace OWS_WSIZ.Models
         public float Pu { get; set; }
         ///<value>propercja Pud</value> 
         public float Pud { get; set; }
+        ///<value>propercja TypSłupa</value> 
+        public string TypSlupa { get; set; }
 
     }
 }
