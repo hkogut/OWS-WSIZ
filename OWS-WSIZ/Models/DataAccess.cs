@@ -95,7 +95,7 @@ namespace OWS_WSIZ.Models
         /// <param name="Wynik"></param>
         /// <param name="Pu"></param>
         /// <param name="Pud"></param>
-        public void ZapiszSlupa(string NrSlupa, string Wynik, float Pu, float Pud)
+        public void ZapiszSlupa(string NrSlupa, string Wynik, float Pu, float Pud, string TypSlupa)
         {
 
             SqlConnection con = new SqlConnection
@@ -105,13 +105,14 @@ namespace OWS_WSIZ.Models
             con.Open();
             SqlCommand cmd = new SqlCommand
             {
-                CommandText = "Insert into ObliczoneSlupy(NrSlupa, Wynik, Pu, Pud) values (@NrSlupa, @Wynik, @Pu, @Pud)",
+                CommandText = "Insert into ObliczoneSlupy(NrSlupa, Wynik, Pu, Pud, TypSlupa) values (@NrSlupa, @Wynik, @Pu, @Pud, @TypSlupa)",
                 Connection = con
             };
             cmd.Parameters.AddWithValue("@NrSlupa", NrSlupa);
             cmd.Parameters.AddWithValue("@Wynik", Wynik);
             cmd.Parameters.AddWithValue("@Pu", Pu);
             cmd.Parameters.AddWithValue("@Pud", Pud);
+            cmd.Parameters.AddWithValue("@TypSlupa", TypSlupa);
             cmd.Connection = con;
             int a = cmd.ExecuteNonQuery();
         }

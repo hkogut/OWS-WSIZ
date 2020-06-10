@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using OWS_WSIZ.Models;
 
 namespace OWS_WSIZ.ViewModels
 {
-    public class SlupNaroznyViewModel : Screen
+    public class SlupNaroznyViewModel : Screen, IDataErrorInfo
     {
         //ilosc kabli
         /// <summary>
@@ -35,18 +36,18 @@ namespace OWS_WSIZ.ViewModels
         /// <summary>
         /// Propercje długość kabla przyłączeniowego
         /// </summary>
-        public float DlugoscPrzylacz1 { get; set; } = 0;
-        public float DlugoscPrzylacz2 { get; set; } = 0;
-        public float DlugoscPrzylacz3 { get; set; } = 0;
-        public float DlugoscPrzylacz4 { get; set; } = 0;
-        public float DlugoscPrzylacz5 { get; set; } = 0;
-        public float DlugoscPrzesla { get; set; } = 0;
+        public int DlugoscPrzylacz1 { get; set; } = 0;
+        public int DlugoscPrzylacz2 { get; set; } = 0;
+        public int DlugoscPrzylacz3 { get; set; } = 0;
+        public int DlugoscPrzylacz4 { get; set; } = 0;
+        public int DlugoscPrzylacz5 { get; set; } = 0;
+        public int DlugoscPrzesla { get; set; } = 0;
 
 
         ///<value>full property katAlfa</value>
-        private float _katAlfa;
+        private int _katAlfa;
 
-        public float KatAlfa
+        public int KatAlfa
         {
             get { return _katAlfa; }
             set
@@ -55,6 +56,55 @@ namespace OWS_WSIZ.ViewModels
                 NotifyOfPropertyChange(() => KatAlfa);
             }
         }
+
+
+
+        string IDataErrorInfo.this[string propertyName]
+        {
+            get
+            {
+                string result = null;
+
+                if (propertyName == "IloscKabel1") result = Validation.valKabel(IloscKabel1);
+                if (propertyName == "IloscKabel2") result = Validation.valKabel(IloscKabel2);
+                if (propertyName == "IloscKabel3") result = Validation.valKabel(IloscKabel3);
+                if (propertyName == "IloscKabel4") result = Validation.valKabel(IloscKabel4);
+                if (propertyName == "IloscKabel5") result = Validation.valKabel(IloscKabel5);
+
+                if (propertyName == "DlugoscPrzylacz1") result = Validation.valDlugoscPrzylacz(DlugoscPrzylacz1);
+                if (propertyName == "DlugoscPrzylacz2") result = Validation.valDlugoscPrzylacz(DlugoscPrzylacz2);
+                if (propertyName == "DlugoscPrzylacz3") result = Validation.valDlugoscPrzylacz(DlugoscPrzylacz3);
+                if (propertyName == "DlugoscPrzylacz4") result = Validation.valDlugoscPrzylacz(DlugoscPrzylacz4);
+                if (propertyName == "DlugoscPrzylacz5") result = Validation.valDlugoscPrzylacz(DlugoscPrzylacz5);
+
+                if (propertyName == "IloscPrzylacz1") result = Validation.valPrzylacz(IloscPrzylacz1);
+                if (propertyName == "IloscPrzylacz2") result = Validation.valPrzylacz(IloscPrzylacz2);
+                if (propertyName == "IloscPrzylacz3") result = Validation.valPrzylacz(IloscPrzylacz3);
+                if (propertyName == "IloscPrzylacz4") result = Validation.valPrzylacz(IloscPrzylacz4);
+                if (propertyName == "IloscPrzylacz5") result = Validation.valPrzylacz(IloscPrzylacz5);
+
+                if (propertyName == "DlugoscPrzesla") result = Validation.valDlugoscPrzeslo(DlugoscPrzesla);
+
+                if (propertyName == "NrSlupa") result = Validation.valNrSlupa(NrSlupa);
+
+                if (propertyName == "KatAlfa") result = Validation.valKatAlfa(KatAlfa); 
+
+                return result;
+            }
+        }
+        public string Error
+        {
+            get
+            {
+                { throw new NotImplementedException(); }
+            }
+        }
+
+
+
+
+
+
 
 
         ///<values>full property Pud, zawiera metode NotifyOfPropertyChange() dynamicznie 
@@ -152,6 +202,18 @@ namespace OWS_WSIZ.ViewModels
             {
                 _nrSlupa = value;
                 NotifyOfPropertyChange(() => NrSlupa);
+            }
+        }
+
+        private string _potwierdzenie;
+
+        public string Potwierdzenie
+        {
+            get { return _potwierdzenie; }
+            set
+            {
+                _potwierdzenie = value;
+                NotifyOfPropertyChange(() => Potwierdzenie);
             }
         }
 
@@ -479,11 +541,18 @@ namespace OWS_WSIZ.ViewModels
             }
         }
 
-        public void Zapisz()
+        public async void Zapisz()
         {
+            
             DataAccess da = new DataAccess();
-            da.ZapiszSlupa(NrSlupa, Wynik, Pu, Pud);
+            da.ZapiszSlupa(NrSlupa, Wynik, Pu, Pud, TypSlupa);
+            Potwierdzenie = "Poprawnie zapisano wynik";
+            await Task.Delay(4000);
+            Potwierdzenie = "";
         }
+
+        public string TypSlupa { get; } = "Słup narożny";
+
         /// <summary>
         /// konstruktor klasy SlupPrzelotowyViewModel
         /// </summary>
@@ -540,47 +609,11 @@ namespace OWS_WSIZ.ViewModels
                          + IloscPrzylacz4 * NaciagPodstawowy.Naciag(DlugoscPrzylacz4, SelectedComboPrzylaczPrzelot4)
                 + IloscPrzylacz5 * NaciagPodstawowy.Naciag(DlugoscPrzylacz5, SelectedComboPrzylaczPrzelot5);
 
-            Pu = (float)Math.Round(2 * Pp * (float)Math.Cos(KatAlfa / 2) + Po + Pr, 2);
+            double b =Math.Cos((KatAlfa / 2) * Math.PI / 180);
+            Pu = (float)Math.Round(2 * Pp * b + Po + Pr, 2);
 
             if (Pud >= Pu) Wynik = "Słup spełnia warunek";
             else if (Pud < Pu) Wynik = "Słup nie spełnia warunku";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
