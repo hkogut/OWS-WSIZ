@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Markup;
 using Caliburn.Micro;
 using OWS_WSIZ.Models;
 
@@ -60,8 +56,12 @@ namespace OWS_WSIZ.ViewModels
 
         public string TypSlupa { get; } = "Słup przelotowy";
 
-        
 
+
+        /// <summary>
+        /// Implementacja interfejsu IDataErrorInfo dzięki któremu zrealizowana została walidacja danych
+        /// wprowadzanych przez użytkownika
+        /// </summary>
         string IDataErrorInfo.this[string propertyName]
         {
             get
@@ -523,9 +523,13 @@ namespace OWS_WSIZ.ViewModels
             }
         }
 
+        /// <summary>
+        /// Metoda powiązana z przyciskiem Zapisz Klasy SlupNaroznyView, wysyła informacje o obliczonym słupie
+        /// do bazy danych, posiada również asynchroniczne opóżnienie odpowiedzialene za zamianę propercji
+        /// Potwierdzenie, informującej o poprawnym zapisie
+        /// </summary>
         public async void Zapisz()
         {
-
             DataAccess da = new DataAccess();
             da.ZapiszSlupa(NrSlupa, Wynik, Pu, Pud, TypSlupa);
             Potwierdzenie = "Poprawnie zapisano wynik";

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 
 namespace OWS_WSIZ.Models
@@ -89,7 +86,7 @@ namespace OWS_WSIZ.Models
 
 
         /// <summary>
-        /// Metoda zapisuje do tabeli ObliczoneSłupy, zmienne przesłąne do metody jako argumenty
+        /// Metoda zapisuje do bazy informację o obliczonym słupie
         /// </summary>
         /// <param name="NrSlupa"></param>
         /// <param name="Wynik"></param>

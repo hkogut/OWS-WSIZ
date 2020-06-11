@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace OWS_WSIZ.Models
 {
     /// <summary>
     /// Klasa Slupy to model tabeli Slupy z bazy danych
-    /// posiada propercje 
     /// </summary>
     public class Slupy
     {

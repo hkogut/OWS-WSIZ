@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace OWS_WSIZ.Models
 {
     /// <summary>
-    /// Klasa StrefaKlimatyczna posiada 
-    /// posiada propercje i metode
+    /// Klasa StrefaKlimatyczna
     /// </summary>
     public class StrefaKlimatyczna
     {

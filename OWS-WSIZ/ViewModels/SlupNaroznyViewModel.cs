@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using OWS_WSIZ.Models;
@@ -44,9 +41,10 @@ namespace OWS_WSIZ.ViewModels
         public int DlugoscPrzesla { get; set; } = 0;
 
 
-        ///<value>full property katAlfa</value>
+        /// <summary>
+        /// full property katAlfa
+        /// </summary>
         private int _katAlfa;
-
         public int KatAlfa
         {
             get { return _katAlfa; }
@@ -59,6 +57,10 @@ namespace OWS_WSIZ.ViewModels
 
 
 
+        /// <summary>
+        /// Implementacja interfejsu IDataErrorInfo dzięki któremu zrealizowana została walidacja danych
+        /// wprowadzanych przez użytkownika
+        /// </summary>
         string IDataErrorInfo.this[string propertyName]
         {
             get
@@ -541,9 +543,13 @@ namespace OWS_WSIZ.ViewModels
             }
         }
 
+        /// <summary>
+        /// Metoda powiązana z przyciskiem Zapisz Klasy SlupNaroznyView, wysyła informacje o obliczonym słupie
+        /// do bazy danych, posiada również asynchroniczne opóżnienie odpowiedzialene za zamianę propercji
+        /// Potwierdzenie, informującej o poprawnym zapisie
+        /// </summary>
         public async void Zapisz()
         {
-            
             DataAccess da = new DataAccess();
             da.ZapiszSlupa(NrSlupa, Wynik, Pu, Pud, TypSlupa);
             Potwierdzenie = "Poprawnie zapisano wynik";
@@ -554,7 +560,7 @@ namespace OWS_WSIZ.ViewModels
         public string TypSlupa { get; } = "Słup narożny";
 
         /// <summary>
-        /// konstruktor klasy SlupPrzelotowyViewModel
+        /// konstruktor klasy SlupNaroznyViewModel
         /// </summary>
         ///<values>
         /// ładuje dane z bazy do kolekcji SKlimat za pomocą funkcji ZalSKlimat()
@@ -568,8 +574,8 @@ namespace OWS_WSIZ.ViewModels
 
         //przycisk załaduj dane
         /// <summary>
-        /// metoda ZaladujDane- powiązana z przyciskiem w pliku SlupPrzelotowyView, za pomocą metod z klasy DataAcces
-        /// metoda ZaladujSlupy ładuje dane do kolekcji zdefiniowanych w klasie SlupPrzelotowyViewModel
+        /// metoda ZaladujDane- powiązana z przyciskiem w pliku SlupNarożnyView, za pomocą metod z klasy DataAcces
+        /// metoda ZaladujSlupy ładuje dane do kolekcji zdefiniowanych w klasie SlupNarożnyViewModel
         /// </summary>
         public void ZaladujDane()
         {

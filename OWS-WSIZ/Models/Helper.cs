@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
+﻿using System.Configuration;
 
 namespace OWS_WSIZ.Models
 {
     /// <summary>
-    /// Klasa Helper 
+    /// Klasa posiadająca jedną propercję przechowującą connectionStringa
     /// </summary>
     public static class Helper
     {

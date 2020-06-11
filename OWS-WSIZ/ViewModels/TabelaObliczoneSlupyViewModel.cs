@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using OWS_WSIZ.Models;
 
 namespace OWS_WSIZ.ViewModels
@@ -27,7 +22,7 @@ namespace OWS_WSIZ.ViewModels
         }
 
         /// <summary>
-        /// 
+        /// Konstruktor klasy TabelaObliczoneSlupyViewModel wczytujący obliczone słupy z bazy danych
         /// </summary>
         public TabelaObliczoneSlupyViewModel()
         {
